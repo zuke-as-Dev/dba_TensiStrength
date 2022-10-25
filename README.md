@@ -1,5 +1,6 @@
 # dba_TensiStrength
 A Data Base algo for Tensistrength to add new words to its data set with formatting. Uses NLP.
+Go to instructions folder.
 step.1
 "Open system-requirements.pds"-Follow all instructions.
 step.2 
