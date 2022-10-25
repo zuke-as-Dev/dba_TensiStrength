@@ -1,0 +1,59 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <title>algo output</title>
+</head>
+<body>
+    <div class="out_container" >
+        <div class="print_container">
+            <h1>DataBase</h1>
+            <h4>
+                {% for data in db_list %}
+                       <li> {{data}}</li>
+                {% endfor %}
+                {% if dl_len == 0 %}
+                    <li>No new word</li>
+                {% endif %} 
+            </h4>
+        </div>
+        <hr>
+        <div>
+            <h1>Data Words</h1>
+            <h4>
+                {% for word in db_words %}
+            
+                    <li>{{word}}</li>
+                {% endfor %}
+                {% if dw_len == 0 %}
+                <li>No new word</li>
+            {% endif %}  
+            </h4>
+        </div>
+    </div>
+    <div class="copy_instruction">
+        <h1 >DataBase Update Instruction</h1>
+        <h3 >Copy the txt in "DataBase" section to "TensiStrength_Data/SentimentLookupTable.txt"</h2>
+        <br>
+        <h3 >Copy the txt in "Data Words" section to "TensiStrength_Data/Dictionary.txt"</h2>
+        <br>
+        <h2>Words that may requier psychological study.</h2>
+        <h4>
+            {% for words in psy %}
+        
+                {{words}}<br>
+            {% endfor %} 
+        </h4>
+    </div>
+    <div align="center">
+        <br>
+        <a href = "{% url 'index' %}" data="&nbsp;Create">&nbsp;Create</a>
+
+    </div>
+
+</body>
+</html>
+

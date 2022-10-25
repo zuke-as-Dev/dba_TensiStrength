@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <title>db algo</title>
+</head>
+<body>
+    <div class="container" >
+        <main>
+            <h1>TensiStrength db Creator:$<span class="cursor">|</span></h1>
+            <h2>Instruction</h3>
+            <ul>
+                <h4>To create new data base for SentiStrength</h4>
+                <li>Enter raw data in the textarea below.</li>
+                <li>The data should only be in English Language.</li>
+                <li>The data should not contain special characters, numbers to improve processing. </li>
+                <li>As the time take for multiple Tensistrength score computaion is more the process may take some time.</li>
+                <li>After entering data press submit button and wait.</li>
+            </ul>
+            <br>
+            <h2 align="center">Textarea</h2>
+            <form method="post" action="counter">
+                {% csrf_token %}
+                <textarea  class="textarea" name="text" rows="25" cols="100" placeholder="Enter raw data here......" required></textarea>
+                <br>
+                <div align ='center'>
+                    <Input class="button" type="submit">
+                </div>
+            </form>
+        </main>
+    </div>
+
+</body>
+</html>
